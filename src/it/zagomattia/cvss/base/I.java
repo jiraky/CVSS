@@ -63,6 +63,8 @@
 package it.zagomattia.cvss.base;
 
 import it.zagomattia.cvss.CVSSVector;
+import javax.swing.DefaultListModel;
+import javax.swing.ListModel;
 
 /**
  * This metric measures the impact to integrity of a successfully exploited 
@@ -122,5 +124,15 @@ public enum I implements CVSSVector {
     @Override
     public String getValueAsString() {
        return String.format("%1$,.3f", this.getValue());
+    }
+    
+    public static ListModel getListModel() {
+        DefaultListModel<I> result = new DefaultListModel<>();
+        
+        result.addElement(I.C);
+        result.addElement(I.N);
+        result.addElement(I.P);
+        
+        return result;
     }
 }

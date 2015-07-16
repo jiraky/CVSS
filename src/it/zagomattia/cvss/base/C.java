@@ -63,6 +63,8 @@
 package it.zagomattia.cvss.base;
 
 import it.zagomattia.cvss.CVSSVector;
+import javax.swing.DefaultListModel;
+import javax.swing.ListModel;
 
 /**
  * This metric measures the impact on confidentiality of a successfully 
@@ -121,5 +123,15 @@ public enum C implements CVSSVector {
     @Override
     public String getValueAsString() {
        return String.format("%1$,.3f", this.getValue());
+    }
+    
+    public static ListModel getListModel() {
+        DefaultListModel<C> result = new DefaultListModel<>();
+        
+        result.addElement(C.C);
+        result.addElement(C.N);
+        result.addElement(C.P);
+        
+        return result;
     }
 }

@@ -63,6 +63,7 @@
 package it.zagomattia.cvss;
 
 
+
 /**
  * Common interface for all sub-score vectors.
  * @author Mattia Zago <a href="mailto:dev@zagomattia.it">dev@zagomattia.it</a>

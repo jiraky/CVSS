@@ -63,6 +63,8 @@
 package it.zagomattia.cvss.base;
 
 import it.zagomattia.cvss.CVSSVector;
+import javax.swing.DefaultListModel;
+import javax.swing.ListModel;
 
 /**
  * This metric measures the number of times an attacker must authenticate to a 
@@ -132,5 +134,15 @@ public enum AU implements CVSSVector {
     @Override
     public String getValueAsString() {
        return String.format("%1$,.3f", this.getValue());
+    }
+    
+    public static ListModel getListModel() {
+        DefaultListModel<AU> result = new DefaultListModel<>();
+        
+        result.addElement(AU.M);
+        result.addElement(AU.N);
+        result.addElement(AU.S);
+        
+        return result;
     }
 }
